@@ -1,2 +1,46 @@
 .search
-    display: none
+    @media media-max-sm
+        position: absolute
+        top: 100%
+        left: -(gap / 2)
+        padding: 0 (gap / 2) 10px
+        width: 'calc(100% + %s)' % gap
+        background: #ff
+
+    &__input[type=search]
+        height: 33px
+        border: solid 2px var(--primary)
+        border-radius: 5px
+        box-shadow: none
+        color: var(--primary)
+        text-align: right
+        font-weight: light
+        font-size: 16px
+
+        &::placeholder
+            color: var(--primary)
+
+        &:focus::placeholder
+            color: transparent
+
+    &__button
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-left: 5px
+        padding: 0
+        width: 33px
+        height: 33px
+        background: none
+        box-shadow: none
+
+        .ico
+            width: 23px
+            height: 23px
+            color: var(--primary)
+
+        &:hover
+            background: none
+
+            .ico
+                color: var(--primary)
