@@ -817,14 +817,15 @@ function default_carrossel_produtos() {
 
                 $j(el).owlCarousel({
                     navigation: true,
+                    pagination: false,
                     navigationText: ['?', '?'],
                     items: 5,
                     itemsCustom: [
-                        [0, 1],
+                        [0, 2],
                         [568, 2],
                         [768, 3],
                         [1024, 4],
-                        [1270, 5],
+                        [1270, 4],
                     ],
                     beforeMove: function () {
                         if (typeof $j.fn.lazyload != 'undefined') {
@@ -959,15 +960,12 @@ function default_tabs() {
     // tabs
     var tabs = $j('.tabs')
     if (tabs.length > 0) {
-        tabs.find('.tabs__tab').first().addClass('on')
-        tabs.find('.tabs__content').first().addClass('on')
-
         tabs.on('click', '.tabs__tab', function () {
             if (!$j(this).hasClass('on')) {
                 tabs.find('.tabs__tab, .tabs__content').removeClass('on')
 
-                $j(this).addClass('on')
-                $j(this).next('.tabs__content').addClass('on')
+                $j(this).toggleClass('on')
+                $j(this).next('.tabs__content').toggleClass('on')
             }
         })
     }
@@ -1238,8 +1236,8 @@ $j.fn.neonTheme.custom = {
     m_mycart: false, // ativa o responsivo do Meu Carrinho
     m_parcelamento: true, // ativa o responsivo do parcelamento na página de produto
     m_frete: true, // ativa o responsivo do cálculo de frete na página do produto
-    m_produto: true, // ativa o responsivo de cada bloco da página de produto
-    m_tabs: true, // ativa o responsivo do componente .tabs do tema
+    m_produto: false, // ativa o responsivo de cada bloco da página de produto
+    m_tabs: false, // ativa o responsivo do componente .tabs do tema
     m_painelCliente: true, // ativa o responsivo do Menu do Painel de Cliente
     /**
      * Funcionalidades do Tema
@@ -1254,6 +1252,10 @@ $j.fn.neonTheme.custom = {
         'z-menu': {
             selector: '.categories__show',
             mode: 'html',
+        },
+        'z-wish': {
+            selector: '.add-to-links .link-wishlist a',
+            mode: 'prepend',
         },
     },
 }

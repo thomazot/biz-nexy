@@ -1,0 +1,94 @@
+.showcase
+    margin: 20px 0
+    text-align: center
+
+    @media media-min-lg
+        display: flex
+
+    &__image
+        img
+            min-width: 100%
+
+        @media media-min-lg
+            flex: 0 1 50%
+
+        .showcase--products &
+            @media media-max-lg
+                display: none
+
+    &__descriptions, &__products
+        @media media-min-lg
+            flex: 1
+            min-width: 0
+
+    &__products
+        .products
+            &__prices
+                .label
+                    display: none
+
+                .price-box
+                    @media media-min-sm
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        white-space: nowrap
+
+                    .old-price
+                        display: block
+                        margin: 0
+
+                        @media media-min-sm
+                            &:after
+                                padding: 0 5px
+                                color: #f00
+                                content: ' > '
+                                font-size: 20px
+
+                        .price span
+                            font-weight: bold
+                            font-size: 18px
+
+                    .special-price, .regular-price, .minimal-price
+                        .price span
+                            color: #f00
+                            font-weight: bold
+                            font-size: 18px
+
+            &__name, .price-box-parcelado, .configurable-swatch-list
+                display: none
+
+            &__item
+                flex: 0 0 33.333%
+                min-width: 0
+
+                @media (max-width: 768px)
+                    flex: 0 0 50%
+
+    &__descriptions
+        display: flex
+        justify-content: center
+        align-items: center
+        font-weight: light
+        font-size: 26px
+
+        @media media-min-lg
+            padding: 20px 80px
+
+        @media media-max-lg
+            padding: 40px 0
+
+        .showcase--descriptions &
+            @media media-min-lg
+                order: -1
+
+    &__title
+        padding-bottom: 10px
+        text-transform: uppercase
+        font-weight: bold
+        font-size: 29px
+
+    &__description
+        font-weight: light
+        font-size: 15px
+        opacity: .5

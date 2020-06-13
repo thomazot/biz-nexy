@@ -36,3 +36,51 @@
 
             @media media-max-sm
                 width: 58px
+
+#banner__banner-category
+    &:before
+        display: block
+        margin: 15px 0 gap
+        color: var(--text-color)
+        content: 'Escolha a categoria'
+        text-align: center
+        text-transform: uppercase
+        font-weight: light
+        font-size: 26px
+
+    .banner
+        &__wrapper
+            display: flex
+            justify-content: space-between
+            margin: -8px
+
+            @media media-max-lg
+                flex-flow: wrap
+
+        &__item
+            display: flex
+            flex-flow: column nowrap
+            padding: 8px
+
+            @media media-max-lg
+                flex: 0 0 50%
+
+            .title
+                display: block
+                margin: 0
+                padding: gap 0
+                text-align: center
+                text-transform: uppercase
+                font-weight: light
+                font-size: 24px
+                line-height: 1
+
+                @media media-max-lg
+                    padding-bottom: 10px
+
+        &__link
+            order: -1
+
+            img
+                width: 100%
+                object-fit: cover

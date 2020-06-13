@@ -1,0 +1,61 @@
+.products
+    &__main
+        text-align: center
+
+        .price-box-parcelado
+            display: inline-block
+
+            .preco-parcelado-sem-juros
+                + .preco-parcelado
+                    display: none
+
+                .upto, .s-juros, .de
+                    display: none
+
+                .num, .value
+                    span
+                        font-weight: bold
+                        font-size: 14px
+
+            .preco-parcelado
+                .de, .s-juros
+                    display: none
+
+                .num, .value
+                    span
+                        font-weight: bold
+                        font-size: 14px
+
+        .price-box
+            display: inline-block
+
+            .old-price
+                display: none
+
+            .special-price, .regular-price, .minimal-price
+                .label
+                    display: none
+
+                .price span
+                    color: #000
+                    font-weight: light
+                    font-size: 14px
+
+        .configurable-swatch-list
+            display: inline-flex
+
+            a
+                overflow: hidden
+                padding: 2px
+                border-radius: 50%
+
+                img
+                    border-radius: 50%
+
+    &__name
+        display: inline-block
+        margin-bottom: 10px
+        color: var(--text-color)
+        text-transform: uppercase
+        font-weight: light
+        font-size: 14px

@@ -1,0 +1,33 @@
+.instagram
+    &__container
+        container()
+
+    &__header
+        display: flex
+        justify-content: flex-start
+        align-items: flex-end
+        padding: 20px 0
+        font-weight: semibold
+        font-size: 29px
+        opacity: .5
+
+        @media media-max-sm
+            font-size: 23px
+
+        a
+            margin-left: 5px
+
+    &__main
+        display: flex
+        overflow: hidden
+        margin: -8px
+
+        a
+            flex: 0 0 25%
+            padding: 8px
+
+            img
+                min-width: 100%
+
+            @media media-max-lg
+                flex: 0 0 50%

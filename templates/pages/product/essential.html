@@ -1,0 +1,64 @@
+<div class="prod__img">
+    @fotos
+    @selos
+</div>
+<div class="prod__shop">	
+	<div class="col">	
+
+		<div class="prod__name">
+			<h1>@nome</h1>
+        </div>
+        
+        @if(is_disponivel)
+            <div class="prod__prices">
+                @preco(parcelado)	
+                @preco
+            </div>
+
+        @endif(is_disponivel)
+        
+        @avaliacoes
+        @links
+
+        @if(is_disponivel)
+            @variacoes
+            @brinde
+            @programa-fidelidade(Compre e Ganhe)
+            @bt(comprar)
+            
+		@else(is_disponivel)		
+			<div class="prod__esgotado">
+				<div class="title title--sm">Produto Esgotado</div>
+				@alertas
+			</div>
+        @endif(is_disponivel)
+
+        <div class="prod__whatsapp">
+            <a href="#">
+                <svg class="icon z-whatsapp"><use xlink:href="#z-whatsapp" /></svg>
+                <span>Compartilhar no WhatsApp</span>
+            </a>
+        </div>
+
+        @compartilhar
+        
+        <dl class="tabs">
+            <dt class="tabs__tab"><span>Descrição e Detalhes</span></dt>
+            <dd class="tabs__content">
+                <div class="std">@descricao</div>
+            </dd>
+            <dt class="tabs__tab"><span>Composição</span></dt>
+            <dd class="tabs__content">
+                <div class="std">@descricao</div>
+            </dd>
+            <dt class="tabs__tab"><span>Tamanhos e Medidas</span></dt>
+            <dd class="tabs__content">
+                <div class="std">@descricao</div>
+            </dd>
+            <dt class="tabs__tab"><span>Frete e Devolução</span></dt>
+            <dd class="tabs__content">
+                <div class="std">@descricao</div>
+            </dd>
+        </dl>
+	</div>
+</div>
