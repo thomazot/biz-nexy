@@ -1361,6 +1361,27 @@ $j(document)
                 $(event.target).toggleClass('on')
             }
         })
+
+        $.ajax({
+            url:
+                'https://graph.instagram.com/me/media?fields=caption,id,media_type,media_url,permalink,thumbnail_url,timestamp,username&access_token=IGQVJXcVFaZAGhTcE1hTTJfVW9NRnlKUXVtVkVLMklTMkdweVlFUkVPQzRMT3Y5cTdLWmhwVUdnVm5nOFNDVWU0NU9JcVJpc09hRkNfdkpjamZAnZAXBBOTdBVnJLWHdXdFNTZAmd0YW5R',
+            method: 'GET',
+            dataType: 'json',
+        }).then(function (data) {
+            data.data.forEach(function (item, index) {
+                if (index < 4) {
+                    $('#instafeed').append(
+                        $(
+                            '<a href="' +
+                                item.permalink +
+                                '"><img src="' +
+                                item.media_url +
+                                '" /></a>'
+                        )
+                    )
+                }
+            })
+        })
     })
     .on('resizeStop', function (e) {
         // Safe window.resize

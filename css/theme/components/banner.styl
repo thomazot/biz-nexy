@@ -5,8 +5,14 @@
         order: -1
 
 #banner__rulers
+    position: sticky
+    top: 74px
+    z-index: 200
     margin-top: -16px
     background: var(--primary-hover)
+
+    @media media-max-lg
+        top: 70px
 
     .ruler
         display: flex
@@ -40,13 +46,13 @@
 #banner__banner-category
     &:before
         display: block
-        margin: 15px 0 gap
+        margin: 15px 0
         color: var(--text-color)
         content: 'Escolha a categoria'
         text-align: center
         text-transform: uppercase
         font-weight: light
-        font-size: 26px
+        font-size: 20px
 
     .banner
         &__wrapper
@@ -68,11 +74,11 @@
             .title
                 display: block
                 margin: 0
-                padding: gap 0
+                padding: (gap / 2) 0 gap
                 text-align: center
                 text-transform: uppercase
                 font-weight: light
-                font-size: 24px
+                font-size: 18px
                 line-height: 1
 
                 @media media-max-lg

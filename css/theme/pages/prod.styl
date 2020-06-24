@@ -5,14 +5,25 @@
             margin-right: 130px
             min-width: 0
 
+        .prolabel
+            position: absolute
+
     &__shop
         --border-color: #cccccc
 
         &
+            position: relative
             text-align: center
+
+            @media media-max-sm
+                padding-top: 85px
 
         @media media-min-lg
             flex: 0 1 400px
+
+            .col
+                flex: 1
+                min-width: 0
 
         .product-rate
             display: none
@@ -20,6 +31,12 @@
             color: #000
 
         .add-to-cart
+            @media media-max-sm
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+
             .qty-wrapper
                 display: none !important
 

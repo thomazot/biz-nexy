@@ -1,6 +1,19 @@
 .catalog-category-view, .catalogsearch-result-index
-    .col-left, .page-title
+    .col-left
         display: none
+
+    .page-title
+        margin: 0
+
+        h1
+            color: #000
+            text-align: center
+            text-transform: uppercase
+            font-weight: 400
+            font-size: 22px
+
+            @media (min-width: 993px)
+                display: none
 
     .category-description
         padding: gap 0
@@ -8,3 +21,6 @@
         color: #000
         text-align: center
         font-size: 21px
+
+    .ias-noneleft
+        display: none !important
