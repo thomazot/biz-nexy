@@ -1,0 +1,17 @@
+.account-create .form-list
+    @media (min-width: 992px)
+        display: flex
+        flex-flow: row wrap
+        align-items: flex-start
+
+        .subtit, .tipopessoa, .dados-pj, .title, .firstname, .telephone, .city, .confirmation, .is_subscribed
+            flex: 0 0 100%
+            padding: 16px 8px
+
+        .zip, .street_1, [class*='street'], .como_conheceu_nexy
+            flex: 0 0 calc(50% - 8px)
+            margin: 0 !important
+            padding: 0 8px 16px
+
+            .field
+                padding: 0

@@ -1382,6 +1382,15 @@ $j(document)
                 }
             })
         })
+
+        $('.account-create .form-list label').each(function () {
+            var elementLabel = $(this)
+            var labelFor = elementLabel.attr('for')
+
+            if (labelFor) {
+                elementLabel.closest('li').addClass(labelFor)
+            }
+        })
     })
     .on('resizeStop', function (e) {
         // Safe window.resize
