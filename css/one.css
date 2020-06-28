@@ -11337,7 +11337,7 @@ svg {
   position: -webkit-sticky;
   position: sticky;
   top: 4.63rem;
-  z-index: 200;
+  z-index: 50;
   margin-top: -1rem;
   background: var(--primary-hover);
 }
@@ -11484,6 +11484,9 @@ svg {
     width: 18.75rem;
     background: #fff;
   }
+  .categories svg {
+    fill: #000;
+  }
   .categories .parent {
     position: relative;
   }
@@ -11556,6 +11559,9 @@ svg {
     min-width: 0;
     background: none;
   }
+  .categories svg {
+    display: none;
+  }
   .categories__all {
     display: none;
   }
@@ -11574,6 +11580,9 @@ svg {
   .categories .ul--0 {
     justify-content: space-around;
   }
+}
+#mobile-menu {
+  display: none;
 }
 
 .configurable {
@@ -11683,7 +11692,17 @@ svg {
     margin: 0 1.88rem 0 0;
   }
 }
-.header .myaccount__header a,
+.header .myaccount__header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.header .myaccount__header .ico {
+  width: auto;
+  height: 1.44rem;
+}
 .header .mycart__header a,
 .header .mywish__header a {
   display: flex;
@@ -11692,13 +11711,11 @@ svg {
   width: 2.5rem;
   height: 2.5rem;
 }
-.header .myaccount__header .ico,
 .header .mycart__header .ico,
 .header .mywish__header .ico {
   width: auto;
   height: 1.44rem;
 }
-.header .myaccount__content,
 .header .mycart__content,
 .header .mywish__content {
   display: none !important;
@@ -11783,6 +11800,83 @@ svg {
   .catalogsearch-result-index .main-container {
     position: static;
   }
+}
+
+.myaccount .form-list .fields {
+  display: block;
+}
+@media (min-width: 993px) {
+  .myaccount__content {
+    border-radius: 5px;
+    background: rgba(255,255,255,0.8);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1), 0 1rem 1rem rgba(0,0,0,0.5);
+  }
+}
+.myaccount__content .title {
+  display: none;
+}
+.myaccount__content .actions {
+  padding-bottom: 0 !important;
+}
+.myaccount__register {
+  margin-top: 0;
+  padding-top: 0;
+}
+.myaccount__register .std {
+  display: none;
+}
+.myaccount__login input {
+  border: solid 2px #494949;
+  border-radius: 4px;
+  box-shadow: none;
+}
+.myaccount__login-btn {
+  width: 100%;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+.myaccount__login-btn:hover {
+  background: #000;
+  color: #fff;
+}
+.myaccount__login-btn span {
+  display: none;
+}
+.myaccount__login-btn:before {
+  content: 'Login';
+}
+.myaccount__forgot {
+  position: static;
+  display: block;
+  padding-top: 0.63rem;
+  color: #000;
+  font-size: 0.88rem;
+}
+.myaccount__forgot:hover {
+  color: #000;
+}
+.myaccount__forgot span {
+  display: none;
+}
+.myaccount__forgot:before {
+  content: 'Esqueceu sua senha ?';
+}
+.myaccount__register-btn {
+  padding: 0.63rem 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 0.88rem;
+}
+.myaccount__register-btn span {
+  display: none;
+}
+.myaccount__register-btn:before {
+  content: 'Não sou cadastrado';
+}
+.myaccount__register-btn:hover {
+  background: none;
+  color: #000;
 }
 
 .owl-next,
@@ -12136,6 +12230,16 @@ svg {
     flex-flow: row wrap;
     align-items: flex-start;
   }
+  .account-create .form-list > li {
+    order: 1;
+  }
+  .account-create .form-list > li.como_conheceu_nexy {
+    order: 2;
+  }
+  .account-create .form-list > li.is_subscribed,
+  .account-create .form-list > li#captcha-input-box-user_create {
+    order: 3;
+  }
   .account-create .form-list .tipopessoa {
     flex: 0 0 100%;
   }
@@ -12146,23 +12250,28 @@ svg {
   .account-create .form-list .telephone,
   .account-create .form-list .city,
   .account-create .form-list .confirmation,
-  .account-create .form-list .is_subscribed {
+  .account-create .form-list .is_subscribed,
+  .account-create .form-list .como_conheceu_nexy,
+  .account-create .form-list [class*='street4'] {
     flex: 0 0 100%;
-    padding: 1rem 0.5rem;
+    padding: 0.5rem;
   }
   .account-create .form-list .zip,
   .account-create .form-list .street_1,
-  .account-create .form-list [class*='street'],
-  .account-create .form-list .como_conheceu_nexy {
+  .account-create .form-list [class*='street2'],
+  .account-create .form-list [class*='street3'] {
     flex: 0 0 calc(50% - 8px);
     margin: 0 !important;
     padding: 0 0.5rem 1rem;
   }
   .account-create .form-list .zip .field,
   .account-create .form-list .street_1 .field,
-  .account-create .form-list [class*='street'] .field,
-  .account-create .form-list .como_conheceu_nexy .field {
+  .account-create .form-list [class*='street2'] .field,
+  .account-create .form-list [class*='street3'] .field {
     padding: 0;
+  }
+  .account-create .form-list [class*='street4'] {
+    padding-right: 1.56rem;
   }
 }
 

@@ -1,0 +1,76 @@
+.myaccount
+    .form-list .fields
+        display: block
+
+    &__content
+        @media media-min-lg
+            border-radius: 5px
+            background: rgba(255, 255, 255, .8)
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1), 0 1rem 1rem rgba(0, 0, 0, .5)
+
+        .title
+            display: none
+
+        .actions
+            padding-bottom: 0 !important
+
+    &__register
+        margin-top: 0
+        padding-top: 0
+
+        .std
+            display: none
+
+    &__login
+        input
+            border: solid 2px #494949
+            border-radius: 4px
+            box-shadow: none
+
+    &__login-btn
+        width: 100%
+        border-radius: 0
+        text-transform: uppercase
+
+        &:hover
+            background: #000
+            color: #fff
+
+        span
+            display: none
+
+        &:before
+            content: 'Login'
+
+    &__forgot
+        position: static
+        display: block
+        padding-top: 10px
+        color: #000
+        font-size: 14px
+
+        &:hover
+            color: #000
+
+        span
+            display: none
+
+        &:before
+            content: 'Esqueceu sua senha ?'
+
+    &__register-btn
+        padding: 10px 0
+        border: 0
+        background: none
+        box-shadow: none
+        font-size: 14px
+
+        span
+            display: none
+
+        &:before
+            content: 'Não sou cadastrado'
+
+        &:hover
+            background: none
+            color: #000

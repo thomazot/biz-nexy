@@ -4,17 +4,29 @@
         flex-flow: row wrap
         align-items: flex-start
 
+        > li
+            order: 1
+
+            &.como_conheceu_nexy
+                order: 2
+
+            &.is_subscribed, &#captcha-input-box-user_create
+                order: 3
+
         .tipopessoa
             flex: 0 0 100%
 
-        .subtit, .dados-pj, .title, .firstname, .telephone, .city, .confirmation, .is_subscribed
+        .subtit, .dados-pj, .title, .firstname, .telephone, .city, .confirmation, .is_subscribed, .como_conheceu_nexy, [class*='street4']
             flex: 0 0 100%
-            padding: 16px 8px
+            padding: 8px
 
-        .zip, .street_1, [class*='street'], .como_conheceu_nexy
+        .zip, .street_1, [class*='street2'], [class*='street3']
             flex: 0 0 calc(50% - 8px)
             margin: 0 !important
             padding: 0 8px 16px
 
             .field
                 padding: 0
+
+        [class*='street4']
+            padding-right: 25px

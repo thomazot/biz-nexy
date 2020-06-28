@@ -1,36 +1,37 @@
 <div class="showcase showcase--products">
     <div class="showcase__image">
-        <img src="{{media url="wysiwyg/showcase/banner-vitrine-01.jpg"}}" alt="" />
+        <img src="{{media url="wysiwyg/showcase/banner-vitrine.png"}}" alt="" />
     </div>
     <div class="showcase__products">
         <div class="showcase__header">
-            <h3 class="showcase__title">Aquecimento para o inverno</h3>
+            <h3 class="showcase__title">Inverno + Quente!</h3>
             <div class="showcase__description">
-                <p>Conforto e praticidade para a estação mais elegante do ano!</p>
-                <p>Confira os queridinhos do site!</p>
+                <p> Confira os queridinhos do site! </p>
+                <p></p>
             </div>
         </div>
         <div class="showcase__content">
-            {{widget type="interface/widget_produtos" template="interface/widgets/produtos.phtml" identificador="showcase" limite="6" markup="<h2 class='products__header'>
-                <a href='@url' itemprop='url' title='Mais detalhes' class='product-link'>
-                    <span class='products__image product-image'>@foto(260x260)</span>
-                </a>
-                @selos
-            </h2>
-            <div class='products__main'>
-                <a href='@url' title='@nome(60)' class='products__name'>@nome</a>
-                
-                @if(is_disponivel)
-                    <div class='products__prices'>
-                        @preco(parcelado)
-                        @preco
-                    </div>
-                @else(is_disponivel)
-                    <div class='products__out'>Produto Esgotado</div>
-                @endif(is_disponivel)
-            
-                @variacoes
-            </div>"}}
+            {{widget type="interface/widget_produtos" template="interface/widgets/produtos.phtml" identificador="showcase" limite="6" exibir_sem_estoque="1" exibir_sem_imagem="1" markup="<h2 class='products__header'>
+                    <a href='@url' itemprop='url' title='Mais detalhes' class='product-link'>
+                        <span class='products__image product-image'>@foto(260x260)</span>
+                    </a>
+                    @selos
+                </h2>
+                <div class='products__main'>
+                    <a href='@url' title='@nome(60)' class='products__name'>@nome</a>
+                    
+                    @if(is_disponivel)
+                        <div class='products__prices'>
+                            @preco(parcelado)
+                            @preco
+                        </div>
+                    @else(is_disponivel)
+                        <div class='products__out'>Produto Esgotado</div>
+                    @endif(is_disponivel)
+
+                    @variacoes
+                </div>"
+            }}
         </div>
     </div>
 </div>

@@ -1232,7 +1232,7 @@ $j.fn.neonTheme.custom = {
     m_categories: true, // ativa o responsivo do Menu de Categorias
     m_search: false, // ativa o responsivo da Busca
     m_filters: true, // ativa o responsivo dos Filtros do Catálogo
-    m_myaccount: false, // ativa o responsivo da Minha Conta
+    m_myaccount: true, // ativa o responsivo da Minha Conta
     m_mycart: false, // ativa o responsivo do Meu Carrinho
     m_parcelamento: true, // ativa o responsivo do parcelamento na página de produto
     m_frete: true, // ativa o responsivo do cálculo de frete na página do produto
@@ -1391,6 +1391,45 @@ $j(document)
                 elementLabel.closest('li').addClass(labelFor)
             }
         })
+
+        var menuComplementar = $('#mobile-menu .ul--0 > li')
+        if (menuComplementar.length) {
+            addSVG({
+                'z-login': {
+                    selector: '#mobile-menu .login a',
+                    mode: 'prepend',
+                },
+                'z-pedidos': {
+                    selector: '#mobile-menu .pedido a',
+                    mode: 'prepend',
+                },
+                'z-comercial': {
+                    selector: '#mobile-menu .comercial a',
+                    mode: 'prepend',
+                },
+                'z-contato': {
+                    selector: '#mobile-menu .contato a',
+                    mode: 'prepend',
+                },
+                'z-nexy': {
+                    selector: '#mobile-menu .nexy a',
+                    mode: 'prepend',
+                },
+            })
+
+            menuComplementar
+                .removeAttr('id')
+                .removeClass('li--0')
+                .removeClass('drop--left')
+                .removeClass('drop--top')
+                .addClass('all-li--0')
+
+            menuComplementar
+                .find('.a--0')
+                .removeClass('a--0')
+                .addClass('all-a--0')
+            $('.categories .all-ul--0').append(menuComplementar)
+        }
     })
     .on('resizeStop', function (e) {
         // Safe window.resize
