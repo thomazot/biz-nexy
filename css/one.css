@@ -11341,6 +11341,18 @@ svg {
   margin-top: -1rem;
   background: var(--primary-hover);
 }
+#banner__rulers .banner__item {
+  background: var(--primary-hover);
+  box-shadow: 0 0 0 1px #fff;
+}
+#banner__rulers .banner__wrapper {
+  margin: 0 auto;
+  width: 83.13rem !important;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: calc(100% - 30px);
+  width: 1330px;
+}
 @media (max-width: 992px) {
   #banner__rulers {
     top: 4.38rem;
@@ -11353,7 +11365,7 @@ svg {
   margin-right: 0.63rem;
   color: #000;
   font-weight: 300;
-  font-size: 1.19rem;
+  font-size: 0.69rem;
 }
 @media (max-width: 568px) {
   #banner__rulers .ruler {
